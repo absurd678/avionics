@@ -27,7 +27,7 @@ class TCP_Port : public Generic_Port
 
 public:
 	TCP_Port();
-	TCP_Port(const char *target_ip_, int tcp_port_);
+	TCP_Port(int tcp_port_);
 	virtual ~TCP_Port();
 
 	int read_message(mavlink_message_t &message);
@@ -51,9 +51,7 @@ private:
 	int buff_ptr;
 	int buff_len;
 	bool debug;
-	const char *target_ip;
-	int rx_port;
-	int tx_port;
+	int port;
 	int sock;
 	bool is_open;
 
