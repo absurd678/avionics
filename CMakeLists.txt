@@ -1,18 +1,18 @@
 cmake_minimum_required(VERSION 3.8)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++17 -lstdc++fs")
 
-option(BUILD_EXAMPLE "build driver example" OFF)
+option(BUILD_EXAMPLE "build driver example" ON)
 
 set(CPP_FILES 
 
 include/cxxopts.hpp
 include/generic_port.h
 include/serial_port.h
-include/tcp_port.h
+include/tcp_server.h
 include/udp_port.h
 
 src/serial_port.cpp
-src/tcp_port.cpp
+src/tcp_server.cpp
 src/udp_port.cpp
 )
 
