@@ -52,7 +52,7 @@ private:
 	int buff_len;
 	bool debug;
 	int port;
-	int sock;
+	int sockfd, connfd;
 	bool is_open;
 
 	int _read_port(uint8_t &cp);

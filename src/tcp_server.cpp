@@ -18,7 +18,7 @@ void TCP_Server::initialize_defaults() {
   port = 5600;
   is_open = false;
   debug = false;
-  sock = -1;
+  sockfd = -1;
 
   // Start mutex
   int result = pthread_mutex_init(&lock, NULL);
@@ -107,7 +107,7 @@ int TCP_Server::write_message(const mavlink_message_t &message) {
 void TCP_Server::start() {
 
   /* Create socket */
-  int sockfd, connfd, len;
+  int  len;
   struct sockaddr_in servaddr, cli;
 
   // socket create and verification
@@ -154,8 +154,8 @@ void TCP_Server::start() {
 void TCP_Server::stop() {
   printf("CLOSE PORT\n");
 
-  int result = close(sock);
-  sock = -1;
+  int result = close(sockfd);
+  sockfd = -1;
 
   if (result) {
     fprintf(stderr, "WARNING: Error on port close (%i)\n", result);
@@ -179,9 +179,9 @@ int TCP_Server::_read_port(uint8_t &cp) {
     buff_ptr++;
     result = 1;
   } else {
-    struct sockaddr_in addr;
+    // struct sockaddr_in addr;
     len = sizeof(struct sockaddr_in);
-    result = read(sock, buff, sizeof(buff));
+    result = read(connfd, buff, sizeof(buff));
 
     if (result > 0) {
       buff_len = result;
@@ -206,7 +206,7 @@ int TCP_Server::_write_port(char *buf, unsigned len) {
   // Write packet via TCP link
   int bytesWritten = 0;
 
-  bytesWritten = write(sock, buff, sizeof(buff));
+  bytesWritten = write(connfd, buff, sizeof(buff));
   printf("sendto: %i\n", bytesWritten);
 
   // Unlock

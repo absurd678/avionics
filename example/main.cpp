@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     options.add_options()("d,device", "serial device", cxxopts::value<std::string>()->default_value("none"))(
         "b,baudrate", "serial baudrate", cxxopts::value<int>()->default_value("0"))(
         "a, address", "udp address", cxxopts::value<std::string>()->default_value("none"))(
-        "p,port", "udp port", cxxopts::value<int>()->default_value("14550"))("t,tcp", "tcp_port", cxxopts::value<int>()->default_value("-1"))(
+        "p,port", "udp port", cxxopts::value<int>()->default_value("14550"))("t,tcp", "tcp_port", cxxopts::value<int>()->default_value("8800"))(
         "hz", "timesync hz", cxxopts::value<int>()->default_value("10"))(
         "h,help", "Print usage");
     auto result = options.parse(argc, argv);
