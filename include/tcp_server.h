@@ -1,5 +1,5 @@
-#ifndef TCP_PORT_H_
-#define TCP_PORT_H_
+#ifndef TCP_Server_H_
+#define TCP_Server_H_
 
 #include <cstdlib>
 #include <stdio.h>
@@ -22,13 +22,13 @@
 
 #include "generic_port.h"
 
-class TCP_Port : public Generic_Port
+class TCP_Server : public Generic_Port
 {
 
 public:
-	TCP_Port();
-	TCP_Port(int tcp_port_);
-	virtual ~TCP_Port();
+	TCP_Server();
+	TCP_Server(int tcp_port_);
+	virtual ~TCP_Server();
 
 	int read_message(mavlink_message_t &message);
 	int write_message(const mavlink_message_t &message);
@@ -59,4 +59,4 @@ private:
 	int _write_port(char *buf, unsigned len);
 };
 
-#endif // TCP_PORT_H_
+#endif // TCP_Server_H_
