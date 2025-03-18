@@ -1,18 +1,34 @@
 #include "tcp_server.h"
 
+/**
+ * @brief Конструктор класса TCP_Server с указанием порта.
+ * 
+ * @param tcp_port_ Порт TCP для сервера.
+ */
 TCP_Server::TCP_Server(int tcp_port_) {
   initialize_defaults();
   port = tcp_port_;
   is_open = false;
 }
 
+/**
+ * @brief Конструктор по умолчанию класса TCP_Server.
+ */
 TCP_Server::TCP_Server() { initialize_defaults(); }
 
+/**
+ * @brief Деструктор класса TCP_Server.
+ * 
+ * Уничтожает мьютекс.
+ */
 TCP_Server::~TCP_Server() {
   // destroy mutex
   pthread_mutex_destroy(&lock);
 }
 
+/**
+ * @brief Инициализирует значения по умолчанию для атрибутов.
+ */
 void TCP_Server::initialize_defaults() {
   // Initialize attributes
   port = 5600;
@@ -28,6 +44,12 @@ void TCP_Server::initialize_defaults() {
   }
 }
 
+/**
+ * @brief Читает сообщение из TCP соединения.
+ * 
+ * @param message Ссылка на объект сообщения Mavlink, в который будет записано прочитанное сообщение.
+ * @return int Возвращает true, если сообщение было успешно прочитано.
+ */
 int TCP_Server::read_message(mavlink_message_t &message) {
   uint8_t cp;
   mavlink_status_t status;
@@ -88,6 +110,12 @@ int TCP_Server::read_message(mavlink_message_t &message) {
   return msgReceived;
 }
 
+/**
+ * @brief Записывает сообщение в TCP соединение.
+ * 
+ * @param message Константная ссылка на объект сообщения Mavlink, которое будет отправлено.
+ * @return int Количество байт, записанных в соединение.
+ */
 int TCP_Server::write_message(const mavlink_message_t &message) {
   char buf[300];
 
@@ -104,6 +132,9 @@ int TCP_Server::write_message(const mavlink_message_t &message) {
   return bytesWritten;
 }
 
+/**
+ * @brief Запускает TCP сервер и ожидает подключения клиента.
+ */
 void TCP_Server::start() {
 
   /* Create socket */
@@ -151,6 +182,9 @@ void TCP_Server::start() {
   return;
 }
 
+/**
+ * @brief Останавливает TCP сервер и закрывает соединение.
+ */
 void TCP_Server::stop() {
   printf("CLOSE PORT\n");
 
@@ -166,6 +200,12 @@ void TCP_Server::stop() {
   printf("\n");
 }
 
+/**
+ * @brief Читает байт из TCP соединения.
+ * 
+ * @param cp Ссылка на переменную, в которую будет записан прочитанный байт.
+ * @return int Результат операции чтения.
+ */
 int TCP_Server::_read_port(uint8_t &cp) {
 
   socklen_t len;
@@ -198,6 +238,13 @@ int TCP_Server::_read_port(uint8_t &cp) {
   return result;
 }
 
+/**
+ * @brief Записывает данные в TCP соединение.
+ * 
+ * @param buf Буфер с данными для записи.
+ * @param len Длина данных для записи.
+ * @return int Количество записанных байт.
+ */
 int TCP_Server::_write_port(char *buf, unsigned len) {
 
   // Lock

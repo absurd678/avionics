@@ -1,0 +1,6 @@
+<map id="Generic_Port" name="Generic_Port">
+<area shape="rect" id="node1" title="Абстрактный класс для представления общего интерфейса порта." alt="" coords="116,5,221,32"/>
+<area shape="rect" id="node2" href="$classSerial__Port.html" title="Класс для работы с последовательным портом." alt="" coords="5,80,97,107"/>
+<area shape="rect" id="node3" href="$classTCP__Server.html" title="Класс для работы с TCP сервером." alt="" coords="121,80,216,107"/>
+<area shape="rect" id="node4" href="$classUDP__Port.html" title="Класс для работы с UDP портом." alt="" coords="241,80,323,107"/>
+</map>

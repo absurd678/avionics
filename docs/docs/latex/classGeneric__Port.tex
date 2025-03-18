@@ -1,0 +1,118 @@
+\hypertarget{classGeneric__Port}{}\doxysection{Класс Generic\+\_\+\+Port}
+\label{classGeneric__Port}\index{Generic\_Port@{Generic\_Port}}
+
+
+Абстрактный класс для представления общего интерфейса порта.  
+
+
+
+
+{\ttfamily \#include $<$generic\+\_\+port.\+h$>$}
+
+
+
+Граф наследования\+:Generic\+\_\+\+Port\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classGeneric__Port__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGeneric__Port_a097fe38711c11885210e799b13e282e6}\label{classGeneric__Port_a097fe38711c11885210e799b13e282e6}} 
+\mbox{\hyperlink{classGeneric__Port_a097fe38711c11885210e799b13e282e6}{Generic\+\_\+\+Port}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGeneric__Port_a07e2d4ceccbffedf45915c7205e0a9ec}\label{classGeneric__Port_a07e2d4ceccbffedf45915c7205e0a9ec}} 
+virtual \mbox{\hyperlink{classGeneric__Port_a07e2d4ceccbffedf45915c7205e0a9ec}{$\sim$\+Generic\+\_\+\+Port}} ()
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classGeneric__Port_a05448d9349442c5425de1982ffcaca0b}{read\+\_\+message}} (mavlink\+\_\+message\+\_\+t \&message)=0
+\begin{DoxyCompactList}\small\item\em Читает сообщение. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classGeneric__Port_a946fb9445fc65ec847d5397f0e64e877}{write\+\_\+message}} (const mavlink\+\_\+message\+\_\+t \&message)=0
+\begin{DoxyCompactList}\small\item\em Записывает сообщение. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classGeneric__Port_ac287c899de3f68a11e7393f50e96087c}{is\+\_\+running}} ()=0
+\begin{DoxyCompactList}\small\item\em Проверяет, запущен ли порт. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGeneric__Port_a66f6a9946dbab0ae7d31d8ff2c4b451c}\label{classGeneric__Port_a66f6a9946dbab0ae7d31d8ff2c4b451c}} 
+virtual void \mbox{\hyperlink{classGeneric__Port_a66f6a9946dbab0ae7d31d8ff2c4b451c}{start}} ()=0
+\begin{DoxyCompactList}\small\item\em Запускает порт. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGeneric__Port_a8efa65a4b5301d80d40209e894c173e8}\label{classGeneric__Port_a8efa65a4b5301d80d40209e894c173e8}} 
+virtual void \mbox{\hyperlink{classGeneric__Port_a8efa65a4b5301d80d40209e894c173e8}{stop}} ()=0
+\begin{DoxyCompactList}\small\item\em Останавливает порт. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Абстрактный класс для представления общего интерфейса порта. 
+
+Этот класс определяет интерфейс для чтения и записи сообщений, а также для управления состоянием порта. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classGeneric__Port_ac287c899de3f68a11e7393f50e96087c}\label{classGeneric__Port_ac287c899de3f68a11e7393f50e96087c}} 
+\index{Generic\_Port@{Generic\_Port}!is\_running@{is\_running}}
+\index{is\_running@{is\_running}!Generic\_Port@{Generic\_Port}}
+\doxysubsubsection{\texorpdfstring{is\_running()}{is\_running()}}
+{\footnotesize\ttfamily virtual bool Generic\+\_\+\+Port\+::is\+\_\+running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Проверяет, запущен ли порт. 
+
+\begin{DoxyReturn}{Возвращает}
+true если порт запущен. 
+
+false если порт не запущен. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classUDP__Port_a27e578f5b8631d6513b8745f98dd781c}{UDP\+\_\+\+Port}}, \mbox{\hyperlink{classTCP__Server_a340bbae0598346e0b1a980449f416536}{TCP\+\_\+\+Server}} и \mbox{\hyperlink{classSerial__Port_a0efd5f9a24249b1e938804c1ba3761a8}{Serial\+\_\+\+Port}}.
+
+\mbox{\Hypertarget{classGeneric__Port_a05448d9349442c5425de1982ffcaca0b}\label{classGeneric__Port_a05448d9349442c5425de1982ffcaca0b}} 
+\index{Generic\_Port@{Generic\_Port}!read\_message@{read\_message}}
+\index{read\_message@{read\_message}!Generic\_Port@{Generic\_Port}}
+\doxysubsubsection{\texorpdfstring{read\_message()}{read\_message()}}
+{\footnotesize\ttfamily virtual int Generic\+\_\+\+Port\+::read\+\_\+message (\begin{DoxyParamCaption}\item[{mavlink\+\_\+message\+\_\+t \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Читает сообщение. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Ссылка на объект сообщения Mavlink, в который будет записано прочитанное сообщение. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+int Код состояния операции чтения. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classUDP__Port_a28bb54f671f466310b88c5e5e450b653}{UDP\+\_\+\+Port}}, \mbox{\hyperlink{classTCP__Server_a75c2463e4037e4c785230895167f8223}{TCP\+\_\+\+Server}} и \mbox{\hyperlink{classSerial__Port_a058fb5bc76aca02677f52f0453d55029}{Serial\+\_\+\+Port}}.
+
+\mbox{\Hypertarget{classGeneric__Port_a946fb9445fc65ec847d5397f0e64e877}\label{classGeneric__Port_a946fb9445fc65ec847d5397f0e64e877}} 
+\index{Generic\_Port@{Generic\_Port}!write\_message@{write\_message}}
+\index{write\_message@{write\_message}!Generic\_Port@{Generic\_Port}}
+\doxysubsubsection{\texorpdfstring{write\_message()}{write\_message()}}
+{\footnotesize\ttfamily virtual int Generic\+\_\+\+Port\+::write\+\_\+message (\begin{DoxyParamCaption}\item[{const mavlink\+\_\+message\+\_\+t \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Записывает сообщение. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Константная ссылка на объект сообщения Mavlink, которое будет отправлено. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+int Код состояния операции записи. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classUDP__Port_a5c8096f641c6c730275bcb339c67b69b}{UDP\+\_\+\+Port}}, \mbox{\hyperlink{classTCP__Server_a704ee83cee7f6976915a843596a8e62a}{TCP\+\_\+\+Server}} и \mbox{\hyperlink{classSerial__Port_a74acac3eb0bcd4f8a48cb5cd59abd709}{Serial\+\_\+\+Port}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/home/sirius/project/my\+\_\+projects/soi/src/communication\+\_\+module/include/generic\+\_\+port.\+h\end{DoxyCompactItemize}

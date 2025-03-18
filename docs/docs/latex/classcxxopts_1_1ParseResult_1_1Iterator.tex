@@ -1,0 +1,52 @@
+\hypertarget{classcxxopts_1_1ParseResult_1_1Iterator}{}\doxysection{Класс cxxopts\+::Parse\+Result\+::Iterator}
+\label{classcxxopts_1_1ParseResult_1_1Iterator}\index{cxxopts::ParseResult::Iterator@{cxxopts::ParseResult::Iterator}}
+\doxysubsection*{Открытые типы}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_a028a7211e9afba85510fbeff708a877c}\label{classcxxopts_1_1ParseResult_1_1Iterator_a028a7211e9afba85510fbeff708a877c}} 
+using {\bfseries iterator\+\_\+category} = std\+::forward\+\_\+iterator\+\_\+tag
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_ad415f3d6f28ec474a22a90bda79dc668}\label{classcxxopts_1_1ParseResult_1_1Iterator_ad415f3d6f28ec474a22a90bda79dc668}} 
+using {\bfseries value\+\_\+type} = \mbox{\hyperlink{classcxxopts_1_1KeyValue}{Key\+Value}}
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_a4802fe1708a301c4be98b423f2823fe3}\label{classcxxopts_1_1ParseResult_1_1Iterator_a4802fe1708a301c4be98b423f2823fe3}} 
+using {\bfseries difference\+\_\+type} = void
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_adc569db0768e1ac98ca5fec44b2c8f55}\label{classcxxopts_1_1ParseResult_1_1Iterator_adc569db0768e1ac98ca5fec44b2c8f55}} 
+using {\bfseries pointer} = const \mbox{\hyperlink{classcxxopts_1_1KeyValue}{Key\+Value}} $\ast$
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_a4d8cab1503154a28ff6adc5198114374}\label{classcxxopts_1_1ParseResult_1_1Iterator_a4d8cab1503154a28ff6adc5198114374}} 
+using {\bfseries reference} = const \mbox{\hyperlink{classcxxopts_1_1KeyValue}{Key\+Value}} \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_a4271f7d62fcb221672696eb557a8774d}\label{classcxxopts_1_1ParseResult_1_1Iterator_a4271f7d62fcb221672696eb557a8774d}} 
+{\bfseries Iterator} (const \mbox{\hyperlink{classcxxopts_1_1ParseResult_1_1Iterator}{Iterator}} \&)=default
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_a25dce36ef99570e0cefed2bba5e2eed1}\label{classcxxopts_1_1ParseResult_1_1Iterator_a25dce36ef99570e0cefed2bba5e2eed1}} 
+CXXOPTS\+\_\+\+DIAGNOSTIC\+\_\+\+PUSH {\bfseries Iterator} (const \mbox{\hyperlink{classcxxopts_1_1ParseResult}{Parse\+Result}} $\ast$pr, bool end=false)
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_a281056eac60be36b5fef7604e8962f82}\label{classcxxopts_1_1ParseResult_1_1Iterator_a281056eac60be36b5fef7604e8962f82}} 
+CXXOPTS\+\_\+\+DIAGNOSTIC\+\_\+\+POP \mbox{\hyperlink{classcxxopts_1_1ParseResult_1_1Iterator}{Iterator}} \& {\bfseries operator++} ()
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_af3ea912889d82299501e6d7c9d9d0332}\label{classcxxopts_1_1ParseResult_1_1Iterator_af3ea912889d82299501e6d7c9d9d0332}} 
+\mbox{\hyperlink{classcxxopts_1_1ParseResult_1_1Iterator}{Iterator}} {\bfseries operator++} (int)
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_a4f87f2937a3eb08f6e4b03e415966201}\label{classcxxopts_1_1ParseResult_1_1Iterator_a4f87f2937a3eb08f6e4b03e415966201}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classcxxopts_1_1ParseResult_1_1Iterator}{Iterator}} \&other) const
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_a3ecd2b61c580c4f6b74a0b194c93b4c1}\label{classcxxopts_1_1ParseResult_1_1Iterator_a3ecd2b61c580c4f6b74a0b194c93b4c1}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classcxxopts_1_1ParseResult_1_1Iterator}{Iterator}} \&other) const
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_a2d344882cbc61c688db1b418cb0dad38}\label{classcxxopts_1_1ParseResult_1_1Iterator_a2d344882cbc61c688db1b418cb0dad38}} 
+const \mbox{\hyperlink{classcxxopts_1_1KeyValue}{Key\+Value}} \& {\bfseries operator$\ast$} ()
+\item 
+\mbox{\Hypertarget{classcxxopts_1_1ParseResult_1_1Iterator_ac3d3d521497904ce14ecf69951e36d2b}\label{classcxxopts_1_1ParseResult_1_1Iterator_ac3d3d521497904ce14ecf69951e36d2b}} 
+const \mbox{\hyperlink{classcxxopts_1_1KeyValue}{Key\+Value}} $\ast$ {\bfseries operator-\/$>$} ()
+\end{DoxyCompactItemize}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/home/sirius/project/my\+\_\+projects/soi/src/communication\+\_\+module/include/cxxopts.\+hpp\end{DoxyCompactItemize}
