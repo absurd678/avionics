@@ -1,4 +1,0 @@
-<map id="Serial_Port" name="Serial_Port">
-<area shape="rect" id="node1" title="Класс для работы с последовательным портом." alt="" coords="12,80,104,107"/>
-<area shape="rect" id="node2" href="$classGeneric__Port.html" title="Абстрактный класс для представления общего интерфейса порта." alt="" coords="5,5,111,32"/>
-</map>

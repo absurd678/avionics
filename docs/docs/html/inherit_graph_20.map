@@ -1,6 +1,0 @@
-<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
-<area shape="rect" id="node1" href="$classGeneric__Port.html" title="Абстрактный класс для представления общего интерфейса порта." alt="" coords="5,56,111,83"/>
-<area shape="rect" id="node2" href="$classSerial__Port.html" title="Класс для работы с последовательным портом." alt="" coords="160,5,252,32"/>
-<area shape="rect" id="node3" href="$classTCP__Server.html" title="Класс для работы с TCP сервером." alt="" coords="159,56,253,83"/>
-<area shape="rect" id="node4" href="$classUDP__Port.html" title="Класс для работы с UDP портом." alt="" coords="165,107,247,133"/>
-</map>
